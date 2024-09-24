@@ -40,8 +40,8 @@ h1 {
     color: var(--text-color);
     background-color: var(--primary-color);
     outline: none;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 5px;
+    border-radius: 5px;
     resize: horizontal;
 }
 
@@ -52,6 +52,7 @@ h1 {
     border: 0px;
     color: var(--text-color);
     background-color: var(--primary-color);
-    padding: 20px;
-    border-radius: 10px;
+    padding: 5px;
+    border-radius: 5px;
+
 }
