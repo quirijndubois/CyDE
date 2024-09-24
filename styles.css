@@ -1,17 +1,19 @@
 /* We define some colors */
 
 :root {
-    --primary-color: #172636;
-    --secondary-color: #f06e6e46;
+    --primary-color: #00000046;
+    --secondary-color: #88c3fa46;
     --text-color: #ffffff;
-    --background-color: #001020;
+    --background-color1: #293f58;
+    --background-color2: #492958;
 }
 
 
 body {
     font-family: 'Roboto', sans-serif;
     padding: 20px;
-    background-color: var(--background-color);
+    /* Make background a nice gradient */
+    background: linear-gradient(45deg, var(--background-color1) 0%, var(--background-color2) 100%);
     color: var(--text-color);
 }
 
@@ -26,6 +28,10 @@ h1 {
     height: 90vh;
 }
 
+.container > div {
+    flex: 1;
+}
+
 #latex-input {
     width: 50%;
     height: 100%;
@@ -34,6 +40,8 @@ h1 {
     color: var(--text-color);
     background-color: var(--primary-color);
     outline: none;
+    padding: 20px;
+    border-radius: 10px;
     resize: horizontal;
 }
 
@@ -44,4 +52,6 @@ h1 {
     border: 0px;
     color: var(--text-color);
     background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
 }
