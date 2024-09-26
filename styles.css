@@ -1,11 +1,13 @@
 /* We define some colors */
 
 :root {
-    --primary-color: #00000046;
+    --primary-color: #ffffff09;
     --secondary-color: #88c3fa46;
     --text-color: #ffffff;
     --background-color1: #293f58;
     --background-color2: #492958;
+    --background-color1: rgb(41, 41, 41);
+    --background-color2: rgb(41, 41, 41);
 }
 
 
@@ -84,6 +86,7 @@ h1 {
     display: flex;
     justify-content: center;
     background-color: var(--primary-color);
+    background-color: #ffffff00;
     border-radius: 5px;
     padding: 10px 20px;
     margin-right: 10px;
@@ -134,4 +137,8 @@ h1 {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+hr {
+    width: calc(100% - 20px);
 }
