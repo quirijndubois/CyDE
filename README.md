@@ -1,6 +1,6 @@
 # CyDE
 
-The official IDE for working on [CyPress](https://github.com/quirijndubois/cypress) projects. 
+The official web IDE for working on [CyPress](https://github.com/quirijndubois/cypress) projects. 
 
 Still in early development. Not yet functional with [CyPress](https://github.com/quirijndubois/cypress) or [CyPDF](https://github.com/pieterteb/CyPDF)
 
