@@ -87,6 +87,8 @@ h1 {
     border-radius: 5px;
     padding: 10px 20px;
     margin-right: 10px;
+    backdrop-filter: blur(10px);
+
 }
 
 .header-button:hover {
@@ -96,3 +98,40 @@ h1 {
 /* .header-button {
     flex-grow: 1;
 } */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    border-radius: 5px;
+    min-width: 100px;
+}
+
+.dropdown-content a {
+    color: white;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    background-color: none;
+    padding: 10px 20px;
+    margin-top: 5px;
+    display: block;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+    background-color: var(--secondary-color);
+
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
