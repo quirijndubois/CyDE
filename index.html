@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,19 @@
     <link rel="stylesheet" href="styles.css">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
-            <h1>CyDE</h1>
+            <button class="header-button"> File</button>
+            <button class="header-button"> Edit</button>
+            <button class="header-button"> Selection</button>
+            <button class="header-button"> View</button>
+            <button class="header-button"> Go</button>
+            <button class="header-button"> Run</button>
         </div>
         <div class="cols">
-            <textarea id="latex-input" spellcheck="false" placeholder="ERROR, try refreshing!"></textarea>        
+            <textarea id="latex-input" spellcheck="false" placeholder="ERROR, try refreshing!"></textarea>
             <div id="latex-preview">
             </div>
         </div>
@@ -21,4 +28,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -34,26 +34,24 @@ h1 {
 }
 
 .header {
-    height: 10%;
-    
     display: flex;
-    justify-content: center;
-
     align-items: center;
     font-size: 16px;
     color: var(--text-color);
-    background-color: var(--primary-color);
     border-radius: 5px;
     margin: 10px;
+    margin-bottom: 0px;
 }
 
 .cols {
     display: flex;
     height: 100%;
 }
-.cols > div {
+
+.cols>div {
     flex: 1;
 }
+
 #latex-input {
     width: 50%;
     height: 90%;
@@ -78,3 +76,23 @@ h1 {
     border-radius: 5px;
     margin: 10px;
 }
+
+.header-button {
+    font-weight: bold;
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+.header-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* .header-button {
+    flex-grow: 1;
+} */
