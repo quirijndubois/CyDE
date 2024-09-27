@@ -1,37 +1,64 @@
 
+function addFileDiv(name) {
 
-document.getElementById('MathJax-script').addEventListener('load', function () {
-    let defaultText =
-        `The schrodinger equation: 
-\\[
--\\frac{\\hbar^2}{2m} \\frac{d^2 \\psi}{dx^2} + V\\psi = E\\psi\\\\
-\\]`
 
-    document.getElementById('code-field').value = defaultText;
-    document.getElementById('preview-field').innerHTML = defaultText;
+    const fileDiv = document.createElement('div');
+    fileDiv.classList.add('file');
+    fileDiv.innerHTML = '<img src="icons/folder.svg" class="filebrowser-icon"> ' + name;
+    document.querySelector('.filebrowser').appendChild(fileDiv);
+}
+
+function getFileContents(name) {
+    fetch('filesystem/' + name)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('code-field').value = data;
+        })
+}
+
+function getFiles() {
+    fetch('files.txt')
+        .then(response => response.text())
+        .then(data => {
+            const filesInFilesystem = data.split('\n');
+
+            filesInFilesystem.forEach(file => {
+                if (file) {
+                    addFileDiv(file);
+                }
+            })
+        })
+
+}
+
+function updatePreview() {
+    const latexInput = document.getElementById('code-field').value;
+    document.getElementById('preview-field').innerHTML = latexInput;
     MathJax.typesetPromise();
-});
+
+}
+
+getFiles();
 
 document.getElementById('code-field').addEventListener('input', function () {
-    const latexInput = this.value;
-
-    document.getElementById('preview-field').innerHTML = latexInput;
-
-    MathJax.typesetPromise();
+    updatePreview();
 });
 
-// Get all file elements
-const files = document.querySelectorAll('.file');
 
-// Add an onclick event listener to each file element
-files.forEach((file) => {
-    file.addEventListener('click', () => {
-        // Remove the 'selected' class from all files
-        files.forEach((f) => f.classList.remove('selected'));
+window.onload = function () {
+    const files = document.querySelectorAll('.file');
+    files.forEach((file) => {
+        file.addEventListener('click', () => {
+            files.forEach((f) => f.classList.remove('selected'));
 
-        // Add the 'selected' class to the clicked file
-        file.classList.add('selected');
+            file.classList.add('selected');
+
+            const name = file.innerText;
+            getFileContents(name);
+
+            setTimeout(() => {
+                updatePreview();
+            }, 100);
+        });
     });
-});
-
-
+}
