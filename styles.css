@@ -2,7 +2,7 @@
 
 :root {
     --primary-color: #ffffff09;
-    --secondary-color: #88c3fa46;
+    --secondary-color: #b0ff3ab6;
     --text-color: #ffffff;
     --background-color1: #293f58;
     --background-color2: #492958;
@@ -54,7 +54,7 @@ h1 {
     flex: 1;
 }
 
-#latex-input {
+#code-field {
     width: 50%;
     height: 90%;
     font-size: 16px;
@@ -68,7 +68,60 @@ h1 {
     margin: 10px;
 }
 
-#latex-preview {
+
+
+.filebrowser {
+    max-width: 300px;
+    min-width: 300px;
+    height: 90%;
+    font-size: 16px;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.filebrowser-icon {
+    margin-right: 10px;
+}
+
+.file {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.file.selected {
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+.file.selected .filebrowser-icon {
+    filter: invert();
+}
+
+.file:hover {
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+.file:hover .filebrowser-icon {
+    filter: invert();
+}
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+#preview-field {
     width: 50%;
     height: 90%;
     font-size: 16px;
@@ -96,11 +149,9 @@ h1 {
 
 .header-button:hover {
     background-color: var(--secondary-color);
-}
+    color: black;
 
-/* .header-button {
-    flex-grow: 1;
-} */
+}
 
 .dropdown {
     position: relative;
@@ -131,7 +182,7 @@ h1 {
 .dropdown-content a:hover {
     background-color: #ddd;
     background-color: var(--secondary-color);
-
+    color: black;
 }
 
 /* Show the dropdown menu on hover */

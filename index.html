@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyDE</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="styles.css">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
@@ -65,12 +66,27 @@
 
         </div>
 
-        <!-- <hr> -->
-
-
         <div class="cols">
-            <textarea id="latex-input" spellcheck="false" placeholder="ERROR, try refreshing!"></textarea>
-            <div id="latex-preview">
+
+            <div class="filebrowser">
+
+                <div class="file">
+                    <img src="icons/folder.svg" class="filebrowser-icon">
+                    File 1
+                </div>
+                <div class="file">
+                    <img src="icons/folder.svg" class="filebrowser-icon">
+                    File 2
+                </div>
+                <div class="file">
+                    <img src="icons/folder.svg" class="filebrowser-icon">
+                    File 3
+                </div>
+
+            </div>
+
+            <textarea id="code-field" spellcheck="false" placeholder="ERROR, try refreshing!"></textarea>
+            <div id="preview-field">
             </div>
         </div>
     </div>
