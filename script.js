@@ -42,6 +42,7 @@ getFiles();
 
 document.getElementById('code-field').addEventListener('input', function () {
     updatePreview();
+    displayLineNumbers()
 });
 
 
@@ -49,6 +50,9 @@ window.onload = function () {
     const files = document.querySelectorAll('.file');
     files.forEach((file) => {
         file.addEventListener('click', () => {
+            if (file.classList.contains('selected')) {
+                return;
+            }
             files.forEach((f) => f.classList.remove('selected'));
 
             file.classList.add('selected');
@@ -58,6 +62,7 @@ window.onload = function () {
 
             setTimeout(() => {
                 updatePreview();
+                displayLineNumbers();
             }, 100);
         });
     });

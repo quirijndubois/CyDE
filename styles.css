@@ -12,7 +12,7 @@
 
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Roboto', sans-serif;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -53,22 +53,6 @@ h1 {
 .cols>div {
     flex: 1;
 }
-
-#code-field {
-    width: 50%;
-    height: 90%;
-    font-size: 16px;
-    border: 0px;
-    color: var(--text-color);
-    background-color: var(--primary-color);
-    outline: none;
-    padding: 5px;
-    border-radius: 5px;
-    resize: horizontal;
-    margin: 10px;
-}
-
-
 
 .filebrowser {
     max-width: 300px;
@@ -112,13 +96,47 @@ h1 {
     filter: invert();
 }
 
+#code-field {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    font-size: 16px;
+    border: 0px;
+    color: var(--text-color);
+    background-color: #ffffff00;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+    resize: none;
+    outline: none;
+    margin-left: 0px;
+    padding-left: 0px;
+    transform: translate(30px, 0px);
+}
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
+#code-container {
+    display: flex;
+    width: 50%;
+    height: 90%;
+    font-size: 16px;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#line-numbers {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    color: rgba(128, 128, 128, 0.472);
+    font-size: smaller;
+    padding: 5px 0px;
+    margin: 10px 0px;
+    user-select: none;
+    overflow: hidden;
+    transform: translate(0px, 1px);
+
 }
 
 #preview-field {
@@ -130,6 +148,7 @@ h1 {
     padding: 5px;
     border-radius: 5px;
     margin: 10px;
+    overflow: hidden;
 }
 
 .header-button {
