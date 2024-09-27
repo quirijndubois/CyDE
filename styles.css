@@ -55,8 +55,8 @@ h1 {
 }
 
 .filebrowser {
-    max-width: 300px;
-    min-width: 300px;
+    max-width: 10%;
+    min-width: 10%;
     height: 90%;
     font-size: 16px;
     color: var(--text-color);
@@ -64,6 +64,7 @@ h1 {
     padding: 5px;
     border-radius: 5px;
     margin: 10px;
+    overflow: hidden;
 }
 
 .filebrowser-icon {
