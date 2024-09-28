@@ -214,3 +214,33 @@ h1 {
 hr {
     width: calc(100% - 20px);
 }
+
+.header-title {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 20px;
+    top: -10px;
+    color: white;
+    padding: none;
+    margin: none;
+    font-size: 12px;
+    max-height: 1px;
+
+}
+
+.header-title a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-subtitle {
+    color: grey;
+    transform: translate(0px, -15px);
+}
+
+
+.header-subtitle a {
+    color: grey;
+    text-decoration: none;
+}
