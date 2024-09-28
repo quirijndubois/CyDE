@@ -46,7 +46,7 @@ document.getElementById('code-field').addEventListener('input', function () {
 });
 
 
-window.onload = function () {
+function makeFileInteractive() {
     const files = document.querySelectorAll('.file');
     files.forEach((file) => {
         file.addEventListener('click', () => {
@@ -67,3 +67,7 @@ window.onload = function () {
         });
     });
 }
+
+setTimeout(() => {
+    makeFileInteractive();
+}, 200)
