@@ -3,6 +3,7 @@
 :root {
     --primary-color: #ffffff09;
     --secondary-color: #b0ff3ab6;
+    --secondary-color-light: #b0ff3a4e;
     --text-color: #ffffff;
     --background-color1: #293f58;
     --background-color2: #492958;
@@ -79,6 +80,10 @@ h1 {
     align-items: center;
 }
 
+.file:hover {
+    background-color: var(--secondary-color-light);
+}
+
 .file.selected {
     background-color: var(--secondary-color);
     color: black;
@@ -88,14 +93,6 @@ h1 {
     filter: invert();
 }
 
-.file:hover {
-    background-color: var(--secondary-color);
-    color: black;
-}
-
-.file:hover .filebrowser-icon {
-    filter: invert();
-}
 
 #code-field {
     width: calc(100% - 30px);
