@@ -91,7 +91,15 @@ textarea.addEventListener('scroll', () => {
     lineNumbersEle.scrollTop = textarea.scrollTop;
 });
 
-
-
 displayLineNumbers();
+
 window.addEventListener('resize', displayLineNumbers);
+
+const ro = new ResizeObserver(() => {
+    const rect = textarea.getBoundingClientRect();
+    lineNumbersEle.style.height = `${rect.height}px`;
+    lineNumbersEle.style.width = `${rect.width}px`;
+    console.log("jfk")
+    displayLineNumbers();
+});
+ro.observe(textarea);
