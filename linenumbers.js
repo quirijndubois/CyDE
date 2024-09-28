@@ -94,3 +94,4 @@ textarea.addEventListener('scroll', () => {
 
 
 displayLineNumbers();
+window.addEventListener('resize', displayLineNumbers);
