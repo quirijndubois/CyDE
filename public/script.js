@@ -9,7 +9,7 @@ function addFileDiv(name) {
 }
 
 function getFileContents(name) {
-    fetch('filesystem/' + name)
+    fetch('../filesystem/' + name)
         .then(response => response.text())
         .then(data => {
             document.getElementById('code-field').value = data;
