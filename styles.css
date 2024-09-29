@@ -141,7 +141,7 @@ h1 {
     margin: 10px;
     overflow: hidden;
     resize: horizontal;
-
+    overflow-y: auto;
 }
 
 .header-button {
