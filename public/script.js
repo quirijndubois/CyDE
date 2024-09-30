@@ -71,3 +71,53 @@ function makeFileInteractive() {
 setTimeout(() => {
     makeFileInteractive();
 }, 200)
+
+
+// make close button on popup work
+
+const popupBackground = document.querySelector('.popup-background');
+const popup = document.querySelector('.popup');
+const popupClose = document.querySelector('.popup-close');
+popupClose.addEventListener('click', () => {
+    popupBackground.style.display = 'none';
+    popup.style.display = 'none';
+})
+
+// open popup on settings button click
+
+const settingsButton = document.querySelector('#settings-button');
+settingsButton.addEventListener('click', () => {
+    popupBackground.style.display = 'block';
+    popup.style.display = 'block';
+})
+
+// make the #open-file button work, allowing you to upload a file and putting that file in the text area
+const openFileButton = document.querySelector('#open-file-button');
+openFileButton.addEventListener('click', () => {
+    const file = document.createElement('input');
+    file.type = 'file';
+    file.click();
+    file.addEventListener('change', () => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            document.getElementById('code-field').value = reader.result;
+            updatePreview();
+            displayLineNumbers();
+        }
+        reader.readAsText(file.files[0]);
+    })
+})
+
+// make the #new-file button work
+const newFileButton = document.querySelector('#new-file-button');
+newFileButton.addEventListener('click', () => {
+    document.getElementById('code-field').value = '';
+    document.querySelectorAll('.file').forEach((file) => {
+        file.classList.remove('selected');
+    })
+    updatePreview();
+    displayLineNumbers();
+})
+
+
+
