@@ -179,6 +179,7 @@ h1 {
     min-width: 100px;
 }
 
+.dropdown-content .dropdown-button,
 .dropdown-content a {
     color: white;
     background-color: var(--primary-color);
@@ -189,9 +190,11 @@ h1 {
     display: block;
     border-radius: 5px;
     backdrop-filter: blur(10px);
+    border: none;
 }
 
 /* Change color of dropdown links on hover */
+.dropdown-content .dropdown-button:hover,
 .dropdown-content a:hover {
     background-color: #ddd;
     background-color: var(--secondary-color);
@@ -272,4 +275,17 @@ hr {
     border-radius: 5px;
     z-index: 99999;
     resize: horizontal;
+}
+
+.popup-background .popup .popup-close {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 30px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 5px;
 }
