@@ -14,9 +14,13 @@
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
-    <div class="container">
-        <div class="header">
+    <main>
+        <canvas id="canvas"></canvas>
+
+        <nav>
+        </nav>
+
+        <header>
             <div class="dropdown">
                 <button class="header-button">File</button>
                 <div class="dropdown-content">
@@ -82,31 +86,27 @@
                     a <a href="https://github.com/quirijndubois/CyPress" target="_blank">CyPress</a> project
                 </div>
             </div>
+        </header>
 
-        </div>
+        <left>
+            <div id="line-numbers" class="container__lines"></div>
+            <textarea id="code-field" spellcheck="false" placeholder="Start coding here..."></textarea>
+        </left>
 
-        <div class="cols">
-
-            <div class="filebrowser"></div>
-
-            <div id="code-container">
-                <div id="line-numbers" class="container__lines"></div>
-                <textarea id="code-field" spellcheck="false" placeholder="Start coding here..."></textarea>
-            </div>
-
-
+        <right>
             <div id="preview-field">
+
+            </div>
+        </right>
+
+        <div class="popup-background">
+            <div class="popup">
+                <h1>Settings</h1>
+                <hr>
+                <div class="popup-close">X</div>
             </div>
         </div>
-    </div>
-
-    <div class="popup-background">
-        <div class="popup">
-            <h1>Settings</h1>
-            <hr>
-        <div class="popup-close">X</div>
-        </div>
-    </div>
+    </main>
 </body>
 
 </html>

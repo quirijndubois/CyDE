@@ -5,7 +5,7 @@ function addFileDiv(name) {
     const fileDiv = document.createElement('div');
     fileDiv.classList.add('file');
     fileDiv.innerHTML = '<img src="icons/folder.svg" class="filebrowser-icon"> ' + name;
-    document.querySelector('.filebrowser').appendChild(fileDiv);
+    document.querySelector('nav').appendChild(fileDiv);
 }
 
 function getFileContents(name) {
