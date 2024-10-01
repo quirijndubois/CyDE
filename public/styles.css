@@ -307,26 +307,12 @@ hr {
 }
 
 ::-webkit-scrollbar {
-    width: 20px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: transparent;
+    width: .5vw;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #d6dee11a;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #d6dee11a;
-    border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #d6dee11a;
-    border-radius: 20px;
-    border: 6px solid transparent;
+    border-radius: calc(.5vw / 2);
     background-clip: content-box;
 }
 
