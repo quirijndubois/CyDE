@@ -125,7 +125,7 @@ right {
     background-color: grey;
     overflow: auto;
     resize: horizontal;
-
+    direction: rtl;
     font-size: 16px;
     color: var(--text-color);
     background-color: var(--primary-color);
