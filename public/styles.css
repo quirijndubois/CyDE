@@ -281,16 +281,20 @@ hr {
 
 .popup-background .popup {
     position: absolute;
+    display: flex;
     top: 50%;
     left: 50%;
     width: 70%;
     height: 70%;
+    max-width: 90%;
+    max-height: 90%;
     transform: translate(-50%, -50%);
     background-color: var(--background-color1);
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     z-index: 99999;
-    resize: horizontal;
+    overflow: auto;
+    resize: both;
 }
 
 .popup-background .popup .popup-close {
