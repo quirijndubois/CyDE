@@ -5,6 +5,7 @@ const ctx = backgroundCanvas.getContext('2d');
 function resizeCanvas() {
     backgroundCanvas.width = window.innerWidth;
     backgroundCanvas.height = window.innerHeight;
+    backgroundCanvas.style.filter = 'blur(' + window.innerWidth * .05 + 'px)';
 }
 
 // Resize the canvas when the window is resized
@@ -14,7 +15,7 @@ window.addEventListener('resize', resizeCanvas);
 function drawCircle(x, y, radius, r, g, b) {
     x = backgroundCanvas.width * x;
     y = backgroundCanvas.height * y;
-    radius = radius * 50 + 10; // Circle radius between 10 and 60
+    radius = radius * backgroundCanvas.width / 1920 * 50 + 10; // Circle radius between 10 and 60
     r = Math.floor(r * 256);
     g = Math.floor(g * 256);
     b = Math.floor(b * 256);
