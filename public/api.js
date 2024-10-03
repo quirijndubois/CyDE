@@ -6,7 +6,7 @@ async function testApi() {
         const data = await response.json();
         console.log(`succesful API response from ${domain}`);
     } catch (error) {
-        console.error('Error:', error);
+        console.log(`failed to get API response from ${domain}`);
     }
 }
 
