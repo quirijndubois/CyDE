@@ -38,7 +38,6 @@ function updatePreview() {
 
 }
 
-getFiles();
 
 document.getElementById('code-field').addEventListener('input', function () {
     updatePreview();
