@@ -1,34 +1,9 @@
 
 function addFileDiv(name) {
-
-
     const fileDiv = document.createElement('div');
     fileDiv.classList.add('file');
-    fileDiv.innerHTML = '<img src="icons/folder.svg" class="filebrowser-icon"> ' + name;
+    fileDiv.innerHTML = '<img src="icons/file.svg" class="filebrowser-icon"> ' + name;
     document.querySelector('nav').appendChild(fileDiv);
-}
-
-function getFileContents(name) {
-    fetch('../filesystem/' + name)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('code-field').value = data;
-        })
-}
-
-function getFiles() {
-    fetch('files.txt')
-        .then(response => response.text())
-        .then(data => {
-            const filesInFilesystem = data.split('\n');
-
-            filesInFilesystem.forEach(file => {
-                if (file) {
-                    addFileDiv(file);
-                }
-            })
-        })
-
 }
 
 function updatePreview() {
@@ -37,7 +12,6 @@ function updatePreview() {
     MathJax.typesetPromise();
 
 }
-
 
 document.getElementById('code-field').addEventListener('input', function () {
     updatePreview();

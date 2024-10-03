@@ -47,6 +47,19 @@ def save_file(request: FileSaveRequest):
         return {"message": f"File saved successfully at {file_path}"}
 
     except Exception as e:
-        # Handle any errors that occur during file saving
         raise HTTPException(
             status_code=500, detail=f"Failed to save file: {e}")
+
+
+@app.get("/get-file/{file_path}")
+def get_file(file_path: str):
+    # Convert the file path string to a Path object
+    file_path = Path("filesystem/"+file_path)
+
+    try:
+        file_content = file_path.read_text(encoding="utf-8")
+        return {"file_content": file_content}
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Failed to read file: {e}")

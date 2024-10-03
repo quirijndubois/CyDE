@@ -46,6 +46,16 @@ function saveFile(name) {
     })
 }
 
+function getFileContents(name) {
+    fetch(`${domain}/get-file/${name}`)
+        .then(response => response.text())
+        .then(data => {
+            // convert data to a dict
+            data = JSON.parse(data);
+            document.getElementById('code-field').value = data["file_content"];
+        })
+}
+
 testApi()
 getFiles()
 
