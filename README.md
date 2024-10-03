@@ -4,4 +4,10 @@ The official web IDE for working on [CyPress](https://github.com/quirijndubois/c
 
 Still in early development. Not yet functional with [CyPress](https://github.com/quirijndubois/cypress) or [CyPDF](https://github.com/pieterteb/CyPDF)
 
-Try [here](https://quirijndubois.github.io/CyDE/public)
+Try [here](https://quirijndubois.github.io/CyDE/public). 
+
+To actually work with files, run the api locally bit cloning the repo and running:
+```bash
+fastapi dev API/main.py
+```
+Then click the link above.
