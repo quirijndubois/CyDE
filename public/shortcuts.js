@@ -86,3 +86,12 @@ document.addEventListener('keydown', (event) => {
         displayLineNumbers();
     }
 })
+
+// ctrl s for saving file:
+document.addEventListener('keydown', (event) => {
+
+    if (event.ctrlKey && event.key === 's') {
+        event.preventDefault();
+        saveCurrentFile();
+    }
+})

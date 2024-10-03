@@ -1,4 +1,3 @@
-const domain = 'http://127.0.0.1:8000';
 
 async function testApi() {
     try {
@@ -56,11 +55,7 @@ function getFileContents(name) {
         })
 }
 
-testApi()
-getFiles()
-
-const saveFileButton = document.querySelector('#save-file-button');
-saveFileButton.addEventListener('click', () => {
+function saveCurrentFile() {
     // get the active file
     const activeFile = document.querySelector('.file.selected');
     if (activeFile) {
@@ -70,4 +65,5 @@ saveFileButton.addEventListener('click', () => {
     else {
         console.log("no file selected")
     }
-})
+}
+
