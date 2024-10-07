@@ -37,18 +37,29 @@ def save_file(request: FileSaveRequest):
     # Convert the file path string to a Path object
     file_path = Path("filesystem/"+request.file_path)
 
-    try:
-        file_path.parent.mkdir(parents=True, exist_ok=True)
+    file_path.parent.mkdir(parents=True, exist_ok=True)
 
-        print(f"Saving file to {file_path}")
-        with file_path.open("w", encoding="utf-8") as file:
-            file.write(request.file_content)
+    print(f"Saving file to {file_path}")
+    with file_path.open("w", encoding="utf-8") as file:
+        file.write(request.file_content)
 
-        return {"message": f"File saved successfully at {file_path}"}
+    return {"message": f"File saved successfully at {file_path}"}
 
-    except Exception as e:
-        raise HTTPException(
-            status_code=500, detail=f"Failed to save file: {e}")
+
+class CompileFileRequest(BaseModel):
+    file_path: str
+
+
+@app.post("/compile-file/")
+def compile_file(request: CompileFileRequest):
+    file_path = Path("filesystem/"+request.file_path)
+    print(file_path)
+
+
+@app.post("/compile-file/")
+def compile_file(request: CompileFileRequest):
+    content = request.file_content
+    print(content)
 
 
 @app.get("/get-file/{file_path}")
@@ -56,10 +67,5 @@ def get_file(file_path: str):
     # Convert the file path string to a Path object
     file_path = Path("filesystem/"+file_path)
 
-    try:
-        file_content = file_path.read_text(encoding="utf-8")
-        return {"file_content": file_content}
-
-    except Exception as e:
-        raise HTTPException(
-            status_code=500, detail=f"Failed to read file: {e}")
+    file_content = file_path.read_text(encoding="utf-8")
+    return {"file_content": file_content}
