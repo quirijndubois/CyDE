@@ -45,6 +45,21 @@ function saveFile(name) {
     })
 }
 
+function compileFile(name) {
+    const code = document.getElementById('code-field').value;
+    const data = {
+        file_path: name
+    };
+
+    fetch(`${domain}/compile-file/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+}
+
 function getFileContents(name) {
     fetch(`${domain}/get-file/${name}`)
         .then(response => response.text())
@@ -67,3 +82,13 @@ function saveCurrentFile() {
     }
 }
 
+function compileCurrentFile() {
+    const activeFile = document.querySelector('.file.selected');
+    if (activeFile) {
+        const name = activeFile.innerText;
+        compileFile(name);
+    }
+    else {
+        console.log("no file selected")
+    }
+}

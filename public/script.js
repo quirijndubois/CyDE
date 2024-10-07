@@ -99,3 +99,7 @@ getFiles()
 
 const saveFileButton = document.querySelector('#save-file-button');
 saveFileButton.addEventListener('click', saveCurrentFile)
+
+
+const comileFileButton = document.querySelector('#compile-file-button');
+comileFileButton.addEventListener('click', compileCurrentFile)
