@@ -7,10 +7,11 @@ function addFileDiv(name) {
 }
 
 function updatePreview() {
-    const latexInput = document.getElementById('code-field').value;
-    document.getElementById('preview-field').innerHTML = latexInput;
-    MathJax.typesetPromise();
+    // const latexInput = document.getElementById('code-field').value;
+    // document.getElementById('preview-field').innerHTML = latexInput;
+    // MathJax.typesetPromise();
 
+    // update the iframe
 }
 
 document.getElementById('code-field').addEventListener('input', function () {
@@ -103,3 +104,8 @@ saveFileButton.addEventListener('click', saveCurrentFile)
 
 const comileFileButton = document.querySelector('#compile-file-button');
 comileFileButton.addEventListener('click', compileCurrentFile)
+
+// reloud iframe every second
+setInterval(() => {
+    document.getElementById('preview-field').src = document.getElementById('preview-field').src
+}, 1000)
