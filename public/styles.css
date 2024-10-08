@@ -157,8 +157,13 @@ right {
     height: 100%;
     font-size: 16px;
     color: var(--text-color);
+    border: none;
     direction: ltr;
     overflow-y: auto;
+}
+
+iframe {
+    filter: invert();
 }
 
 .header-button {
