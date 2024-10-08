@@ -57,12 +57,7 @@ def compile_file(request: CompileFileRequest):
     print("To compile: " + str(file_path))
 
     compileTexToHTML(file_path, "filesystem", "compiled")
-
-
-@app.post("/compile-file/")
-def compile_file(request: CompileFileRequest):
-    content = request.file_content
-    print(content)
+    return {"message": "File compiled successfully"}
 
 
 @app.get("/get-file/{file_path}")
