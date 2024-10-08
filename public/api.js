@@ -58,6 +58,10 @@ function compileFile(name) {
         },
         body: JSON.stringify(data)
     })
+        .then(response => response.text())
+        .then(data => {
+            updatePreview();
+        })
 }
 
 function getFileContents(name) {

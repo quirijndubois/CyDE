@@ -10,12 +10,10 @@ function updatePreview() {
     // const latexInput = document.getElementById('code-field').value;
     // document.getElementById('preview-field').innerHTML = latexInput;
     // MathJax.typesetPromise();
-
-    // update the iframe
+    document.getElementById('preview-field').src = document.getElementById('preview-field').src
 }
 
 document.getElementById('code-field').addEventListener('input', function () {
-    updatePreview();
     displayLineNumbers()
 });
 
@@ -35,7 +33,6 @@ function makeFileInteractive() {
             getFileContents(name);
 
             setTimeout(() => {
-                updatePreview();
                 displayLineNumbers();
             }, 100);
         });
@@ -48,7 +45,6 @@ setTimeout(() => {
 
 
 // make close button on popup work
-
 const popupBackground = document.querySelector('.popup-background');
 const popup = document.querySelector('.popup');
 const popupClose = document.querySelector('.popup-close');
@@ -58,7 +54,6 @@ popupClose.addEventListener('click', () => {
 })
 
 // open popup on settings button click
-
 const settingsButton = document.querySelector('#settings-button');
 settingsButton.addEventListener('click', () => {
     popupBackground.style.display = 'block';
@@ -75,7 +70,6 @@ openFileButton.addEventListener('click', () => {
         const reader = new FileReader();
         reader.onload = () => {
             document.getElementById('code-field').value = reader.result;
-            updatePreview();
             displayLineNumbers();
         }
         reader.readAsText(file.files[0]);
@@ -89,7 +83,6 @@ newFileButton.addEventListener('click', () => {
     document.querySelectorAll('.file').forEach((file) => {
         file.classList.remove('selected');
     })
-    updatePreview();
     displayLineNumbers();
 })
 
@@ -104,8 +97,3 @@ saveFileButton.addEventListener('click', saveCurrentFile)
 
 const comileFileButton = document.querySelector('#compile-file-button');
 comileFileButton.addEventListener('click', compileCurrentFile)
-
-// reloud iframe every second
-setInterval(() => {
-    document.getElementById('preview-field').src = document.getElementById('preview-field').src
-}, 1000)
