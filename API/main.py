@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 from pydantic import BaseModel
+from compile import *
 
 app = FastAPI()
 
@@ -52,8 +53,10 @@ class CompileFileRequest(BaseModel):
 
 @app.post("/compile-file/")
 def compile_file(request: CompileFileRequest):
-    file_path = Path("filesystem/"+request.file_path)
-    print(file_path)
+    file_path = request.file_path
+    print("To compile: " + str(file_path))
+
+    compileTexToHTML(file_path, "filesystem", "compiled")
 
 
 @app.post("/compile-file/")
