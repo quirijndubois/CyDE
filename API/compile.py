@@ -4,15 +4,16 @@ import os
 # compiles a file with a given shell command
 
 
-def compileFile(command, name, input_directory, output_directory):
+def compileTexToPDF(name, input_directory, output_directory):
+    os.system(f"cp {input_directory}/{name} {output_directory}/temp.tex")
+    os.system(f"cd {output_directory} && pdflatex temp.tex")
 
-    command = "make4ht -d " + \
-        output_directory + " " + input_directory + "/" + name + ' "mathml,mathjax"'
-    print(command)
-    os.system(command)
+
+def compileTexToHTML(name, input_directory, output_directory):
+    os.system(f"cp {input_directory}/{name} {output_directory}/temp.tex")
+    os.system(
+        f'cd {output_directory} && ls && make4ht temp.tex "mathml,mathjax"')
 
 
 if __name__ == "__main__":
-    compileFile("pdflatex", "schrodinger.tex", "filesystem", "compiled")
-
-    # os.system("pdflatex filesystem/schrodinger.tex")
+    compileTexToHTML("schrodinger.tex", "filesystem", "compiled")
