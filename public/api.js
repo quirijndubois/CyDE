@@ -80,6 +80,7 @@ function saveCurrentFile() {
     else {
         console.log("no file selected")
     }
+    compileCurrentFile();
 }
 
 function compileCurrentFile() {
